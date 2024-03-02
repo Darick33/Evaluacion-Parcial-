@@ -2,7 +2,7 @@
 
 <!-- Basic Bootstrap Table -->
 <div class="card">
-    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#ModalUsuarios">Nuevo Usuario</button>
+    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#ModalRoles">Nuevo ROL</button>
 
 
     <h5 class="card-header">Lista de Roles</h5>
@@ -12,10 +12,11 @@
                 <tr>
                     <th>#</th>
                     <th>Nombre</th>
+                    
                 
                 </tr>
             </thead>
-            <tbody class="table-border-bottom-0" id="ListaRoles">
+            <tbody class="table-border-bottom-0" id="listaRoles">
 
             </tbody>
         </table>
@@ -32,7 +33,7 @@
                 <h5 class="modal-title" id="tituloModal"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form id="form_usuarios" method="post">
+            <form id="form_roles" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="Nombres">Nombre</label>

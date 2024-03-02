@@ -11,24 +11,20 @@ function init() {
   var CargaLista = () => {
     var html = "";
     $.get(
-      "../../controllers/roles.controllers.php?op=todos",
+      "../../controllers/rol.controllers.php?op=todos",
       (lisroles) => {
         lisroles = JSON.parse(lisroles);
         $.each(lisroles, (index, roles) => {
           html += `<tr>
               <td>${index + 1}</td>
-              <td>${usuario.Nombre}</td>
+              <td>${roles.Nombre_rol}</td>
              
   <td>
-  <button class='btn btn-primary' click='uno(${
-            usuario.Userrol
-          })'>Editar</button>
-  <button class='btn btn-warning' click='eliminar(${
-            usuario.Userrol
-          })'>Editar</button>
-              `;
-        });
-        $("#lisroles").html(html);
+  
+</td>
+</tr>`;
+});
+        $("#listaRoles").html(html);
       }
     );
   };

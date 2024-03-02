@@ -76,7 +76,7 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                <a href="usuarios/roles.views.php" target="base" class="menu-link">
+                <a href="artistas/roles.views.php" target="base" class="menu-link">
                 
                         <?php $_SESSION['rutas'] = 'Roles'; ?>
                         <div data-i18n="Without navbar">Roles</div>

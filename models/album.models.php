@@ -38,15 +38,15 @@ class Album
         $cadena = "INSERT INTO `album`(`Titulo`, `Anio_lanzamiento`, `Sello_discografico`, `Genero`, `ID_artista`) VALUES ('$Titulo', $Anio_lanzamiento, '$Sello_discografico', '$Genero', $ID_artista)";
         
         if (mysqli_query($con, $cadena)) {
-            require_once('./artista_album.models.php');
-            $UsArtistas = new artista_album();
-            $result = $UsArtistas->Insertar(mysqli_insert_id($con), $ID_artista);
-            $con->close();
-            return $result;
+            require_once('../models/artista_album.models.php');
+            $UsArtista = new artista_album();
+
+            return $UsArtista->Insertar(mysqli_insert_id($con), $ID_artista);
         } else {
-            $con->close();
             return 'Error al insertar en la base de datos';
         }
+        $con->close();
+
     }
 
     // Procedimiento para actualizar un álbum

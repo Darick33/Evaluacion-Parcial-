@@ -46,11 +46,11 @@
                     </div>
                     <div class="form-group">
                         <label for="Nombres">Anio Lanzamiento</label>
-                        <input type="text" name="Anio_Lanzamiento" id="Anio_Lanzamiento" class="form-control" placeholder="**********" required>
+                        <input type="text" name="Anio_lanzamiento" id="Anio_lanzamiento" class="form-control" placeholder="**********" required>
                     </div>
                     <div class="form-group">
                         <label for="Nombres">Sello Discografico </label>
-                        <input type="text" name="Sello_Discografico" id="Sello_Discografico" class="form-control" placeholder="Ingrese el anio en que inicio su carrera" required>
+                        <input type="text" name="Sello_discografico" id="Sello_discografico" class="form-control" placeholder="Ingrese el anio en que inicio su carrera" required>
                     </select>
                 </div>
                 <div class="form-group">

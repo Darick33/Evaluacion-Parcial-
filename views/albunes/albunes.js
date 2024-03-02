@@ -60,7 +60,7 @@ var GuardarEditar = (e) => {
               CargaLista();
               LimpiarCajas();
             } else {
-              alert("No se pudo guardar el artista");
+              alert("No se pudo guardar el album");
             }
           } catch (error) {
             // console.error("Error al analizar la respuesta JSON:", error);

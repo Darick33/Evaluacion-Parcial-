@@ -119,15 +119,15 @@ function init() {
 
   var artistas = () => {
     return new Promise((resolve, reject) => {
-      var html = `<option value="0">Seleccione una opcion</option>`;
+      var html = `<option value="0">Seleccione una opción</option>`;
       $.post(
-        "../../controllers/artista.controllers.php?op=todos2",
-        async (ListaArtistas) => {
-          ListaArtistas = JSON.parse(ListaArtistas);
-          $.each(ListaArtistas, (index, artista) => {
-            html += `<option value="${artista.ID_artista}">${artista.Nombre}</option>`;
+        "../../controllers/roles.controllers.php?op=todos",
+        async (ListaRoles) => {
+          ListaRoles = JSON.parse(ListaRoles);
+          $.each(ListaRoles, (index, rol) => {
+            html += `<option value="${rol.RolID}">${rol.Nombre_Rol}</option>`;
           });
-          await $("#ID_artista").html(html);
+          await $("#RolID").html(html);
           resolve();
         }
       ).fail((error) => {

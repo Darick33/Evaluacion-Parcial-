@@ -17,13 +17,13 @@ switch ($_GET["op"]) {
         break;
           
 
-    // case 'uno':
-    //     $idAlbum = $_POST["idAlbum"];
-    //     $datos = array();
-    //     $datos = $Album->uno($idAlbum);
-    //     $res = mysqli_fetch_assoc($datos);
-    //     echo json_encode($res);
-    //     break;
+    case 'uno':
+        $idAlbum = $_POST["idAlbum"];
+        $datos = array();
+        $datos = $Album->uno($idAlbum);
+        $res = mysqli_fetch_assoc($datos);
+        echo json_encode($res);
+        break;
 
     // case 'insertar':
     //     $nombre = $_POST["nombre"];

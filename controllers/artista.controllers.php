@@ -15,7 +15,7 @@ switch ($_GET["op"]) {
         }
         echo json_encode($todos);
         break;
-        
+
     case 'uno':
         $ID_artista = $_POST["ID_artista"];
         $datos = array();
@@ -34,7 +34,6 @@ switch ($_GET["op"]) {
         $Contrasenia = $_POST["Contrasenia"];
         $datos = array();
         $datos = $Artista->Insertar($Nombre, $Genero, $Pais, $Anio_inicio_carrera, $ID_rol, $Correo, $Contrasenia);
-
         echo json_encode($datos);
         break;
 

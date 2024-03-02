@@ -14,15 +14,6 @@ class Artista
         $con->close();
         return $datos;
     }
-    public function todos2()
-    {
-        $con = new ClaseConectar();
-        $con = $con->ProcedimientoConectar();
-        $cadena = "SELECT * FROM `artista`"; // Se cambia 'Roles' por 'Rol'
-        $datos = mysqli_query($con, $cadena);
-        $con->close();
-        return $datos;
-    }
 
     // Procedimiento para sacar un registro
     public function uno($ID_artista)
@@ -37,24 +28,28 @@ class Artista
 
     // Procedimiento para insertar un artista
     public function Insertar($Nombre, $Genero, $Pais, $Anio_inicio_carrera, $ID_rol, $Correo, $Contrasenia)
-{
-    $con = new ClaseConectar();
-    $con = $con->ProcedimientoConectar();
-    $cadena = "INSERT INTO `artista` (`Nombre`, `Genero`, `Pais`, `Anio_inicio_carrera`, `ID_rol`, `Correo`, `Contrasenia`) VALUES ('$Nombre', '$Genero', '$Pais', $Anio_inicio_carrera, $ID_rol, '$Correo', '$Contrasenia')";
-    
-    if (mysqli_query($con, $cadena)) {
-        require_once('../models/artista_roles.models.php');
-        $UsRoles = new artista_roles();
+    {
+        $con = new ClaseConectar();
+        $con = $con->ProcedimientoConectar();
+        $cadena = "INSERT INTO `artista` (`Nombre`, `Genero`, `Pais`, `Anio_inicio_carrera`, `ID_rol`, `Correo`, `Contrasenia`) VALUES ('$Nombre', '$Genero', '$Pais', $Anio_inicio_carrera, $ID_rol, '$Correo', '$Contrasenia')";
+        
+        if (mysqli_query($con, $cadena)) {
+            require_once('../models/artista_roles.models.php');
+            $UsRoles = new artista_roles();
 
-        $result = $UsRoles->Insertar(mysqli_insert_id($con), $ID_rol);
+            return $UsRoles->Insertar(mysqli_insert_id($con), $ID_rol);
+        } else {
+            return 'Error al insertar en la base de datos';
+        }
         $con->close();
-        return $result;
-    } else {
-        $con->close();
-        return 'Error al insertar en la base de datos';
+
+        // if (mysqli_query($con, $cadena)) {
+        //     return "ok";
+        // } else {
+        //     return 'Error al insertar en la base de datos';
+        // }
+        // $con->close();
     }
-}
-
 
     // Procedimiento para actualizar un artista
     public function Actualizar($ID_artista, $Nombre, $Correo, $Contrasenia, $ID_rol, $Cedula)

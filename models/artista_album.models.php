@@ -27,11 +27,11 @@ class Artista_Album
     }
 
     /* Procedimiento para insertar */
-    public function Insertar($Album_idAlbum, $Artistas_idArtistas)
+    public function Insertar($ID_album, $ID_artista)
     {
         $con = new ClaseConectar();
         $con = $con->ProcedimientoConectar();
-        $cadena = "INSERT INTO `artista_album`(`ID_album`, `ID_artista` ) VALUES (  $Album_idAlbum, $Artistas_idArtistas)";
+        $cadena = "INSERT INTO `artista_album`(`ID_album`, `ID_artista` ) VALUES ( $ID_album, $ID_artista)";
         if (mysqli_query($con, $cadena)) {
             $con->close();
             return "ok";

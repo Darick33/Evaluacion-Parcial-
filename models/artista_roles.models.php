@@ -27,42 +27,19 @@ class Artista_Roles
     }
 
     /* Procedimiento para insertar */
-    // public function Insertar($Artistas_idArtistas, $Roles_idRoles)
-    // {
-    //     $con = new ClaseConectar();
-    //     $con = $con->ProcedimientoConectar();
-    //     $cadena = "INSERT INTO `artista_rol`(`ID_artista_rol`, `ID_artista`, `ID_rol`) VALUES (NULL, $Artistas_idArtistas, $Roles_idRoles)";
-    //     if (mysqli_query($con, $cadena)) {
-    //         $con->close();
-    //         return "ok";
-    //     } else {
-    //         $con->close();
-    //         return 'Error al insertar en la base de datos';
-    //     }
-    // }
-
-    /* Procedimiento para insertar */
-
-
-
-
-
-public function Insertar($ID_album, $ID_artista)
-{   
-    
-
-    $con = new ClaseConectar();
-    $con = $con->ProcedimientoConectar();
-    $cadena = "INSERT INTO `artista_album`(`ID_album`, `ID_artista` ) VALUES (  $ID_album, $ID_artista)";
-    if (mysqli_query($con, $cadena)) {
-        $con->close();
-        return "ok";
-    } else {
-        $con->close();
-        return 'Error al insertar en la base de datos';
+    public function Insertar($Artistas_idArtistas, $Roles_idRoles)
+    {
+        $con = new ClaseConectar();
+        $con = $con->ProcedimientoConectar();
+        $cadena = "INSERT INTO `artista_rol`(`ID_artista_rol`, `ID_artista`, `ID_rol`) VALUES (NULL, $Artistas_idArtistas, $Roles_idRoles)";
+        if (mysqli_query($con, $cadena)) {
+            $con->close();
+            return "ok";
+        } else {
+            $con->close();
+            return 'Error al insertar en la base de datos';
+        }
     }
-}
-
 
     /* Procedimiento para actualizar */
     public function Actualizar($Usuarios_idUsuarios, $Roles_idRoles, $idUsuariosRoles)

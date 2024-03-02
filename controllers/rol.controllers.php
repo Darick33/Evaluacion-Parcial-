@@ -24,7 +24,7 @@ switch ($_GET["op"]) {
         $res = mysqli_fetch_assoc($datos);
         echo json_encode($res);
         break;
-        /*TODO: Procedimiento para insertar
+       
     case 'insertar':
 
         $Ultimo = $_POST["Ultimo"];
@@ -35,19 +35,5 @@ switch ($_GET["op"]) {
         echo json_encode($datos);
         break;
        
-    case 'actualizar':
-        $idAccesos = $_POST["idAccesos"];
-        $Ultimo = $_POST["Ultimo"];
-        $Usuarios_idUsuarios = $_POST["Usuarios_idUsuarios"];
-        $datos = array();
-        $datos = $Sucursal->Actualizar($idAccesos, $Ultimo, $Usuarios_idUsuarios);
-        echo json_encode($datos);
-        break;
-       
-    case 'eliminar':
-        $idAccesos = $_POST["idAccesos"];
-        $datos = array();
-        $datos = $Sucursal->Eliminar($idAccesos);
-        echo json_encode($datos);
-        break; */
+  
 }

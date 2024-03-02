@@ -17,22 +17,8 @@ switch ($_GET["op"]) {
         break;
           
 
-    case 'uno':
-        $idAlbum = $_POST["idAlbum"];
-        $datos = array();
-        $datos = $Album->uno($idAlbum);
-        $res = mysqli_fetch_assoc($datos);
-        echo json_encode($res);
-        break;
+    
 
-    // case 'insertar':
-    //     $nombre = $_POST["nombre"];
-    //     $artista = $_POST["artista"];
-    //     $anio = $_POST["anio"];
-    //     $datos = array();
-    //     $datos = $Album->Insertar($nombre, $artista, $anio);
-    //     echo json_encode($datos);
-    //     break;
     case 'insertar':
         $Titulo = $_POST["Titulo"];
         $Anio_lanzamiento = $_POST["Anio_lanzamiento"];
